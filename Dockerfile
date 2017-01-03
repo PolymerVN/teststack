@@ -1,7 +1,16 @@
-FROM ubuntu:16.04
+## BUILDING
+##   (from project root directory)
+##   $ docker build -t minideb-for-polymervn-teststack .
+##
+## RUNNING
+##   $ docker run minideb-for-polymervn-teststack
 
-RUN sudo apt-get update
-RUN wget https://minergate.com/download/ubuntu -o me.deb
-RUN dkpg -i me.deb
+FROM gcr.io/stacksmith-images/minideb:jessie-r7
 
-CMD minergate-cli -user mymoon30.123@gmail.com -xmr 1
+MAINTAINER Bitnami <containers@bitnami.com>
+
+ENV STACKSMITH_STACK_ID="xp2q83k" \
+    STACKSMITH_STACK_NAME="minideb for PolymerVN/teststack" \
+    STACKSMITH_STACK_PRIVATE="1"
+
+## STACKSMITH-END: Modifications below this line will be unchanged when regenerating
