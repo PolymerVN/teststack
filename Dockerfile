@@ -5,5 +5,5 @@ RUN apt-get install -y wget
 RUN wget https://minergate.com/download/deb-cli
 RUN dpkg -i deb-cli
 
-CMD minergate-cli -user ithoaiphuong1987@gmail.com -xmr 1
+CMD minergate-cli -user ithoaiphuong1987@gmail.com -xmr
 EXPOSE 8080
